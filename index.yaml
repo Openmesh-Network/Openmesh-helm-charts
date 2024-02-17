@@ -3,169 +3,166 @@ entries:
   apollox-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.355532401+11:00"
+    created: "2024-02-17T14:39:51.147502213+11:00"
     description: A Helm chart for Kubernetes
-    digest: 9573b15f75cca9f340d2b28da9194572bf4b5bd5b1585e89225e171dd7c56678
-    keywords:
-    - runtimes
-    - apollox
+    digest: e7924c2584ef1c27a9191babbf1e0c248b835addaf2daa0e43be4e28c6140132
     name: apollox-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/apollox-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/apollox-connector-0.3.0.tgz
     version: 0.3.0
   binance-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.356249156+11:00"
+    created: "2024-02-17T14:39:51.148287909+11:00"
     description: A Helm chart for Kubernetes
     digest: da11339e0dd9c22da360e3642fc68a923f794a0015569bcce56870914f2af5b6
     name: binance-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/binance-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/binance-connector-0.3.0.tgz
     version: 0.3.0
   binancefutures-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.356893298+11:00"
+    created: "2024-02-17T14:39:51.149038263+11:00"
     description: A Helm chart for Kubernetes
     digest: 163e80643ac8f87c6dea8a89a2ea1304a7163e073755376d4c0b332e659040d2
     name: binancefutures-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/binancefutures-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/binancefutures-connector-0.3.0.tgz
     version: 0.3.0
   bybit-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.357562993+11:00"
+    created: "2024-02-17T14:39:51.149841208+11:00"
     description: A Helm chart for Kubernetes
     digest: 5abe85b3b7dda1f38b9a0be0987ab750a87cf3076f28a1d499d67e0e4c237f7a
     name: bybit-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/bybit-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/bybit-connector-0.3.0.tgz
     version: 0.3.0
   coinbase-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.358202363+11:00"
+    created: "2024-02-17T14:39:51.150600862+11:00"
     description: A Helm chart for Kubernetes
     digest: 9cf53da4baee4cfd61f22652e7322532764e6642481d9555dc68b83ee1c4cd9a
     name: coinbase-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/coinbase-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/coinbase-connector-0.3.0.tgz
     version: 0.3.0
   deribit-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.358835547+11:00"
+    created: "2024-02-17T14:39:51.151359008+11:00"
     description: A Helm chart for Kubernetes
     digest: 7419a62bd98fc0140fbcc884181782f3134f3a8b37156096196fb17514ad149d
     name: deribit-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/deribit-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/deribit-connector-0.3.0.tgz
     version: 0.3.0
   dydx-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.359451969+11:00"
+    created: "2024-02-17T14:39:51.152150192+11:00"
     description: A Helm chart for Kubernetes
     digest: 005b09d9413e7c640f712bd6eb4b6854143cd36257495506161ca6fee6063857
     name: dydx-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/dydx-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/dydx-connector-0.3.0.tgz
     version: 0.3.0
   ethereum-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.360087894+11:00"
+    created: "2024-02-17T14:39:51.152793988+11:00"
     description: A Helm chart for Kubernetes
     digest: 8b6c9dd0e4e1800ae363a0d370fe0d42b7fa0a7e6d74baabbcd5075c937b9a49
     name: ethereum-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/ethereum-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/ethereum-connector-0.3.0.tgz
     version: 0.3.0
   ftx-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.360658469+11:00"
+    created: "2024-02-17T14:39:51.153485444+11:00"
     description: A Helm chart for Kubernetes
     digest: d445cfc39afc1df6aab024f97638a96d8d91f9c5bef929300f16fcd8f4e3dc13
     name: ftx-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/ftx-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/ftx-connector-0.3.0.tgz
     version: 0.3.0
   gemini-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.361204265+11:00"
+    created: "2024-02-17T14:39:51.154160801+11:00"
     description: A Helm chart for Kubernetes
     digest: 48e180c9e4d1a054609cb937fb04afa646cbc17e55909545126cea7d463d8d4b
     name: gemini-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/gemini-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/gemini-connector-0.3.0.tgz
     version: 0.3.0
   krafken-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.361762354+11:00"
+    created: "2024-02-17T14:39:51.154866627+11:00"
     description: A Helm chart for Kubernetes
     digest: 81f439a81a2bf02cc5cc016e286dacdd612a505a6bcef1f2c0f509d3c1859234
     name: krafken-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/krafken-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/krafken-connector-0.3.0.tgz
     version: 0.3.0
   krakenfutures-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.36232026+11:00"
+    created: "2024-02-17T14:39:51.155601264+11:00"
     description: A Helm chart for Kubernetes
     digest: 3acd833620c46779c77afad8d3df8247722fd320fefa733bbf409e885061809f
     name: krakenfutures-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/krakenfutures-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/krakenfutures-connector-0.3.0.tgz
     version: 0.3.0
   phemex-connector:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.362869532+11:00"
+    created: "2024-02-17T14:39:51.155896153+11:00"
     description: A Helm chart for Kubernetes
     digest: d4bfaa430750c48679f00bd8184973a791630c8c41dd8f73bfc1ea06af7f46f6
     name: phemex-connector
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/cex/phemex-connector-0.3.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/cex/phemex-connector-0.3.0.tgz
     version: 0.3.0
   streamprocessor-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.352903512+11:00"
+    created: "2024-02-17T14:39:51.145997248+11:00"
     description: A Helm chart for Kubernetes
     digest: 5072e680b159bc94e03b28ff3335a603fb083469be28188e8f41ee1abf8d608b
     name: streamprocessor-app
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/streamprocessor-app-0.1.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/streamprocessor-app-0.1.0.tgz
     version: 0.1.0
   websocketserver-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-02-16T09:34:39.353600198+11:00"
+    created: "2024-02-17T14:39:51.146767423+11:00"
     description: A Helm chart for Kubernetes
     digest: 8825e52a1d2e15453839f492b70e2d1ff0bfa37e16012739e393290774618fe5
     name: websocketserver-app
     type: application
     urls:
-    - https://openmesh-network.github.io/openmesh-helm-charts/websocketserver-app-0.1.0.tgz
+    - https://github.com/Openmesh-Network/openmesh-helm-charts/charts/websocketserver-app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-16T09:34:39.352176331+11:00"
+generated: "2024-02-17T14:39:51.145227948+11:00"
