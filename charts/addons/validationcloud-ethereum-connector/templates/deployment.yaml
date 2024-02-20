@@ -1,0 +1,101 @@
+{{- range .Values.currencyPairs }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-{{ .name }}
+  labels:
+    {{- include "l3-connector.labels" $ | nindent 4 }}
+spec:
+  {{- if $.Values.deploymentStrategy }}
+  strategy:
+    {{- toYaml $.Values.deploymentStrategy | nindent 4 }}
+  {{- end }}
+  {{- if not $.Values.autoscaling.enabled }}
+  replicas: {{ $.Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "l3-connector.selectorLabels" $ | nindent 6 }}
+  template:
+    metadata:
+      {{- with $.Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "l3-connector.selectorLabels" $ | nindent 8 }}
+        {{- with $.Values.podLabels }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      automountServiceAccountToken: true
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccount: {{ include "l3-connector.serviceAccountName" $ }}
+      serviceAccountName: {{ include "l3-connector.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .name }}
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag | default $.Chart.AppVersion }}"
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          {{- if $.Values.containers.command }}
+          command:
+            {{- toYaml $.Values.containers.command | nindent 12 }} 
+          {{- end }}
+          {{- if $.Values.containers.command }}
+          args:
+            {{- toYaml $.Values.containers.args | nindent 12 }} 
+            - {{ .symbol }}
+          {{- end }}
+          ports:
+            {{- toYaml $.Values.containers.ports | nindent 12 }}
+          livenessProbe:
+            {{- toYaml $.Values.containers.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml $.Values.containers.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+          envFrom:
+            {{- if $.Values.configMap.usePreCreatedConfigMap }}
+            - configMapRef:
+                name: {{ $.Release.Name }}
+            {{- end }}
+            {{- if $.Values.containers.envFrom }}
+              {{- toYaml $.Values.containers.envFrom | nindent 12 }}
+            {{- end }}
+          {{- if or ($.Values.containers.env) ($.Values.envSecret) }}
+          env:
+            {{- if $.Values.containers.env }}
+              {{- toYaml $.Values.containers.env | nindent 12 }}
+            {{- end }}
+            {{- if $.Values.envSecret }}
+              {{- toYaml $.Values.envSecret | nindent 12 }}
+            {{- end }}
+          {{- end }}
+          {{- if $.Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml $.Values.volumeMounts | nindent 12 }}
+          {{- end }}
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if $.Values.volumes }}
+      volumes:
+        {{- toYaml $.Values.volumes | nindent 8 }}
+      {{- end }}
+{{- end }}

@@ -1,0 +1,124 @@
+# Default values for my-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# .Release.Name should be in the form of stream name and the application name
+
+# If usePreCreatedConfigMap is true, the default configmap (named .Release.Name) will be used (pre created elsewhere)
+configMap:
+  usePreCreatedConfigMap: false
+
+replicaCount: 1
+
+currencyPairs:
+  ALL:
+    name: all
+    symbol: "ALL"
+
+image:
+  repository: harrys522/collector
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set the name will be identical to the .Release.Name
+  name: "connector"
+
+podAnnotations: {}
+podLabels:
+  runon: ec2
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+# service:
+#   type: ClusterIP
+#   port: 30205
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-2:750462544805:certificate/f4a0d786-189f-4510-b095-f51296e74d29
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-FS-1-2-Res-2019-08
+    alb.ingress.kubernetes.io/subnets: subnet-090dcdec37746e267, subnet-0d13f66fb095b7889, subnet-0f9e6de6a538b9b28
+    alb.ingress.kubernetes.io/tags: Environment=shared,Team=shared
+    alb.ingress.kubernetes.io/target-type: ip
+  hosts:
+    - host: ws.shared.projectx.network
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  requests:
+    cpu: "0.5"
+    memory: "400Mi"
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: {}
+
+affinity: {}
+
+containers:
+  command:
+    - python3
+    - runner.py
+    - connector
+  args:
+    - --source 
+    - ethereum 
+    - --symbol
+  envFrom: []
+  env: {}
+
+volumeMounts:
+- mountPath: /src/keys/
+  name: openmesh-secrets
+  readOnly: true
+
+volumes:
+- name: openmesh-secrets
+  secret:
+    secretName: openmesh-secrets

@@ -1,0 +1,19 @@
+{{- if .Values.service}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "l3-connector.fullname" . }}
+  labels:
+    {{- include "l3-connector.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      {{- with (first .Values.containers.ports) }}
+      targetPort: {{ .containerPort }}
+      protocol: {{ .protocol }}
+      name: {{ .name }}
+      {{- end }}
+  selector:
+    {{- include "l3-connector.selectorLabels" . | nindent 4 }}
+{{- end }}
