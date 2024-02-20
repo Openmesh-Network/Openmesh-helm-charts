@@ -10,6 +10,7 @@ entries:
     type: application
     urls:
     - https://openmesh-network.github.io/openmesh-helm-charts/charts/cex/apollox-connector-0.3.0.tgz
+    - /charts/cex/apollox-connector-0.3.0.tgz
     version: 0.3.0
   binance-connector:
   - apiVersion: v2
