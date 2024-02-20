@@ -166,4 +166,26 @@ entries:
     urls:
     - https://openmesh-network.github.io/openmesh-helm-charts/charts/websocketserver-app-0.1.0.tgz
     version: 0.1.0
+  snowflake-connector:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-02-20T16:26:15.597570721+11:00"
+    description: A Helm chart for Kubernetes
+    digest: 2d1a76b08d1e01d3a731c5ac14c79d91192ef2730c3de98aed0acde5ef92752c
+    name: snowflake-connector
+    type: application
+    urls:
+    - https://openmesh-network.github.io/openmesh-helm-charts/charts/addons/snowflake-connector-0.1.0.tgz
+    version: 0.1.0
+  validation-cloud-ethereum-connector:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-20T16:26:15.598100677+11:00"
+    description: A Helm chart for Kubernetes
+    digest: 86870f9fa92b1e82193e6bc6279ea79831f14582af10a69a8522ce78295a5df1
+    name: validation-cloud-ethereum-connector
+    type: application
+    urls:
+    - https://openmesh-network.github.io/openmesh-helm-charts/charts/addons/validation-cloud-ethereum-connector-0.3.0.tgz
+    version: 0.3.0
 generated: "2024-02-17T15:12:51.802405327+11:00"
